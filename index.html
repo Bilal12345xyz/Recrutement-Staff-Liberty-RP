@@ -243,33 +243,6 @@
         return;
       }
 
-      if (data.age < 15) {
-        // On accepte moins que 15 si maturité, donc on laisse passer mais on peut avertir
-        if (!confirm("Tu as moins de 15 ans, es-tu sûr de ta maturité pour postuler ?")) {
-          return;
-        }
-      }
-
-      if (isNaN(data.hours_fivem) || data.hours_fivem < 200) {
-        alert("Il faut un minimum de 200 heures de jeu FiveM.");
-        return;
-      }
-
-      if (countNonEmptyLines(data.motivation) < 4) {
-        alert("Les motivations doivent faire minimum 4 lignes.");
-        return;
-      }
-
-      if (countItemsSeparatedByComma(data.qualites) < 3 && data.qualites.split('\n').filter(l=>l.trim().length>0).length < 3) {
-        alert("Merci de mettre au moins 3 qualités (séparées par des virgules ou sur plusieurs lignes).");
-        return;
-      }
-
-      if (countItemsSeparatedByComma(data.defauts) < 3 && data.defauts.split('\n').filter(l=>l.trim().length>0).length < 3) {
-        alert("Merci de mettre au moins 3 défauts (séparés par des virgules ou sur plusieurs lignes).");
-        return;
-      }
-
       // Préparation du message embed Discord
       const embed = {
         title: "Nouvelle candidature staff",
